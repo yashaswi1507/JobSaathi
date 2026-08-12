@@ -1,0 +1,247 @@
+{
+  "python": {
+    "youtube": "https://youtu.be/rfscVS0vtbw",
+    "course": "https://www.coursera.org/learn/python",
+    "book": "Automate the Boring Stuff with Python"
+  },
+  "java": {
+    "youtube": "https://youtu.be/eIrMbAQSU34",
+    "course": "https://www.udemy.com/course/java-the-complete-java-developer-course",
+    "book": "Head First Java"
+  },
+  "javascript": {
+    "youtube": "https://youtu.be/W6NZfCO5SIk",
+    "course": "https://www.udemy.com/course/the-complete-javascript-course",
+    "book": "Eloquent JavaScript"
+  },
+  "sql": {
+    "youtube": "https://youtu.be/HXV3zeQKqGY",
+    "course": "https://www.coursera.org/learn/sql-for-data-science",
+    "book": "Learning SQL by Alan Beaulieu"
+  },
+  "react": {
+    "youtube": "https://youtu.be/bMknfKXIFA8",
+    "course": "https://www.udemy.com/course/react-the-complete-guide-incl-redux",
+    "book": "Learning React by Alex Banks"
+  },
+  "django": {
+    "youtube": "https://youtu.be/F5mRW0jo-U4",
+    "course": "https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp",
+    "book": "Django for Beginners"
+  },
+  "flask": {
+    "youtube": "https://youtu.be/Z1RJmh_OqeA",
+    "course": "https://www.udemy.com/course/python-flask-for-beginners",
+    "book": "Flask Web Development"
+  },
+  "node.js": {
+    "youtube": "https://youtu.be/TlB_eWDSMt4",
+    "course": "https://www.udemy.com/course/the-complete-nodejs-developer-course-2",
+    "book": "Node.js Design Patterns"
+  },
+  "html": {
+    "youtube": "https://youtu.be/qz0aGYrrlhU",
+    "course": "https://www.coursera.org/learn/html-css-javascript-for-web-developers",
+    "book": "HTML and CSS by Jon Duckett"
+  },
+  "css": {
+    "youtube": "https://youtu.be/yfoY53QXEnI",
+    "course": "https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass",
+    "book": "CSS: The Definitive Guide"
+  },
+  "aws": {
+    "youtube": "https://youtu.be/k1RI5locZE4",
+    "course": "https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03",
+    "book": "AWS Certified Solutions Architect Study Guide"
+  },
+  "azure": {
+    "youtube": "https://youtu.be/NKEFWyqJ5XA",
+    "course": "https://www.coursera.org/learn/microsoft-azure-fundamentals-az-900",
+    "book": "Exam Ref AZ-900 Microsoft Azure Fundamentals"
+  },
+  "docker": {
+    "youtube": "https://youtu.be/3c-iBn73dDE",
+    "course": "https://www.udemy.com/course/docker-mastery",
+    "book": "Docker Deep Dive by Nigel Poulton"
+  },
+  "kubernetes": {
+    "youtube": "https://youtu.be/X48VuDVv0do",
+    "course": "https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests",
+    "book": "Kubernetes in Action"
+  },
+  "devops": {
+    "youtube": "https://youtu.be/0yWAtQ6wYNM",
+    "course": "https://www.coursera.org/professional-certificates/devops-and-software-engineering",
+    "book": "The Phoenix Project"
+  },
+  "machine learning": {
+    "youtube": "https://youtu.be/NWONeJKn6kc",
+    "course": "https://www.coursera.org/learn/machine-learning",
+    "book": "Hands-On ML with Scikit-Learn"
+  },
+  "deep learning": {
+    "youtube": "https://youtu.be/aircAruvnKk",
+    "course": "https://www.coursera.org/specializations/deep-learning",
+    "book": "Deep Learning by Ian Goodfellow"
+  },
+  "tensorflow": {
+    "youtube": "https://youtu.be/tPYj3fFJGjk",
+    "course": "https://www.coursera.org/professional-certificates/tensorflow-in-practice",
+    "book": "Learning TensorFlow"
+  },
+  "pytorch": {
+    "youtube": "https://youtu.be/Z_ikDlimN6A",
+    "course": "https://www.udemy.com/course/pytorch-for-deep-learning",
+    "book": "Programming PyTorch for Deep Learning"
+  },
+  "pandas": {
+    "youtube": "https://youtu.be/vmEHCJofslg",
+    "course": "https://www.kaggle.com/learn/pandas",
+    "book": "Python for Data Analysis"
+  },
+  "numpy": {
+    "youtube": "https://youtu.be/QUT1VHiLmmI",
+    "course": "https://www.kaggle.com/learn/intro-to-machine-learning",
+    "book": "From Python to Numpy"
+  },
+  "data analysis": {
+    "youtube": "https://youtu.be/r-uOLxNrNk8",
+    "course": "https://www.coursera.org/professional-certificates/google-data-analytics",
+    "book": "Storytelling with Data"
+  },
+  "nlp": {
+    "youtube": "https://youtu.be/X2vAabgKiuM",
+    "course": "https://www.coursera.org/specializations/natural-language-processing",
+    "book": "Speech and Language Processing"
+  },
+  "power bi": {
+    "youtube": "https://youtu.be/AGrl-H87pRU",
+    "course": "https://www.udemy.com/course/microsoft-power-bi-up-running-with-power-bi-desktop",
+    "book": "Beginning Power BI"
+  },
+  "tableau": {
+    "youtube": "https://youtu.be/aHaOIvR00So",
+    "course": "https://www.udemy.com/course/tableau10",
+    "book": "Learning Tableau"
+  },
+  "mongodb": {
+    "youtube": "https://youtu.be/-56x56UppqQ",
+    "course": "https://www.udemy.com/course/mongodb-the-complete-developers-guide",
+    "book": "MongoDB: The Definitive Guide"
+  },
+  "postgresql": {
+    "youtube": "https://youtu.be/qw--VYLpxG4",
+    "course": "https://www.udemy.com/course/the-complete-python-postgresql-developer-course",
+    "book": "PostgreSQL: Up and Running"
+  },
+  "mysql": {
+    "youtube": "https://youtu.be/7S_tz1z_5bA",
+    "course": "https://www.udemy.com/course/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert",
+    "book": "Learning MySQL"
+  },
+  "cybersecurity": {
+    "youtube": "https://youtu.be/hXSFdwIOfnE",
+    "course": "https://www.coursera.org/professional-certificates/google-cybersecurity",
+    "book": "The Web Application Hackers Handbook"
+  },
+  "network security": {
+    "youtube": "https://youtu.be/2GNNjgus_5s",
+    "course": "https://www.coursera.org/learn/network-security-database-vulnerabilities",
+    "book": "Network Security Essentials"
+  },
+  "project management": {
+    "youtube": "https://youtu.be/FpgYdq1W1dk",
+    "course": "https://www.coursera.org/professional-certificates/google-project-management",
+    "book": "PMBOK Guide"
+  },
+  "agile": {
+    "youtube": "https://youtu.be/Z9QbYZh1YXY",
+    "course": "https://www.coursera.org/learn/agile-development",
+    "book": "The Agile Samurai"
+  },
+  "scrum": {
+    "youtube": "https://youtu.be/2Vt7Ik8Ublw",
+    "course": "https://www.udemy.com/course/scrum-advanced",
+    "book": "Scrum by Jeff Sutherland"
+  },
+  "financial analysis": {
+    "youtube": "https://youtu.be/7J9EM1G4mk4",
+    "course": "https://www.coursera.org/learn/financial-analysis",
+    "book": "Financial Statement Analysis"
+  },
+  "accounting": {
+    "youtube": "https://youtu.be/yYX4bvQSqbo",
+    "course": "https://www.coursera.org/learn/wharton-accounting",
+    "book": "Accounting Made Simple"
+  },
+  "excel": {
+    "youtube": "https://youtu.be/Vl0H-qTclOg",
+    "course": "https://www.udemy.com/course/microsoft-excel-2013-from-beginner-to-advanced-and-beyond",
+    "book": "Excel Bible"
+  },
+  "cisco": {
+    "youtube": "https://youtu.be/rv3QK2UquxM",
+    "course": "https://www.udemy.com/course/complete-networking-fundamentals-course-ccna-start",
+    "book": "CCNA 200-301 Official Cert Guide"
+  },
+  "networking": {
+    "youtube": "https://youtu.be/qiQR5rTSshw",
+    "course": "https://www.coursera.org/learn/computer-networking",
+    "book": "Computer Networks by Tanenbaum"
+  },
+  "linux": {
+    "youtube": "https://youtu.be/wBp0Rb-ZJak",
+    "course": "https://www.udemy.com/course/complete-linux-training-course-to-get-your-dream-it-job",
+    "book": "The Linux Command Line"
+  },
+  "git": {
+    "youtube": "https://youtu.be/RGOj5yH7evk",
+    "course": "https://www.udemy.com/course/git-complete",
+    "book": "Pro Git by Scott Chacon"
+  },
+  "rest api": {
+    "youtube": "https://youtu.be/lsMQRaeKNDk",
+    "course": "https://www.udemy.com/course/rest-api-flask-and-python",
+    "book": "RESTful Web APIs"
+  },
+  "microservices": {
+    "youtube": "https://youtu.be/lTAcCNbJ7KE",
+    "course": "https://www.udemy.com/course/microservices-with-node-js-and-react",
+    "book": "Building Microservices"
+  },
+  "terraform": {
+    "youtube": "https://youtu.be/SLB_c_ayRMo",
+    "course": "https://www.udemy.com/course/terraform-beginner-to-advanced",
+    "book": "Terraform: Up and Running"
+  },
+  "jenkins": {
+    "youtube": "https://youtu.be/LFDrDnKPOTg",
+    "course": "https://www.udemy.com/course/jenkins-from-zero-to-hero",
+    "book": "Jenkins 2: Up and Running"
+  },
+  "blockchain": {
+    "youtube": "https://youtu.be/SSo_EIwHSd4",
+    "course": "https://www.coursera.org/learn/blockchain-basics",
+    "book": "Mastering Bitcoin"
+  },
+  "c++": {
+    "youtube": "https://youtu.be/vLnPwxZdW4Y",
+    "course": "https://www.udemy.com/course/beginning-c-plus-plus-programming",
+    "book": "C++ Primer"
+  },
+  "system administration": {
+    "youtube": "https://youtu.be/UCr04qIB7uc",
+    "course": "https://www.coursera.org/learn/system-administration-it-infrastructure-services",
+    "book": "The Practice of System and Network Administration"
+  },
+  "active directory": {
+    "youtube": "https://youtu.be/85-bp7XxWDQ",
+    "course": "https://www.udemy.com/course/active-directory-administration-for-helpdesk-technicians",
+    "book": "Active Directory by Brian Desmond"
+  },
+  "risk management": {
+    "youtube": "https://youtu.be/ip7ItZ6D7y4",
+    "course": "https://www.coursera.org/learn/risk-management",
+    "book": "Risk Management by Michel Crouhy"
+  }
+}

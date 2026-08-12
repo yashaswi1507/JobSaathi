@@ -1,0 +1,68 @@
+role,min_lpa,max_lpa,avg_lpa,demand,growth
+Data Scientist,8,25,14,Very High,Excellent
+Machine Learning Engineer,10,30,18,Very High,Excellent
+AI Engineer,12,35,20,Very High,Excellent
+Deep Learning Engineer,12,35,22,High,Excellent
+NLP Engineer,10,30,18,High,Excellent
+Computer Vision Engineer,10,28,17,High,Very Good
+MLOps Engineer,12,32,20,Very High,Excellent
+Data Analyst,4,15,7,Very High,Good
+Business Analyst,5,18,9,High,Good
+Data Engineer,8,25,14,Very High,Excellent
+Analytics Engineer,8,22,13,High,Very Good
+Generative AI Engineer,15,50,28,Very High,Excellent
+Prompt Engineer,10,30,18,Very High,Excellent
+Research Scientist,15,40,25,High,Excellent
+Software Engineer,5,20,10,Very High,Good
+Senior Software Engineer,12,35,20,Very High,Good
+Full Stack Developer,5,22,11,Very High,Very Good
+Backend Developer,5,20,10,High,Good
+Frontend Developer,4,18,8,High,Good
+Python Developer,5,22,11,Very High,Very Good
+Java Developer,5,20,10,High,Good
+React Developer,4,18,9,High,Good
+Node.js Developer,4,18,8,High,Good
+Mobile App Developer,4,18,9,High,Good
+Android Developer,4,18,9,High,Good
+iOS Developer,5,20,10,Medium,Good
+Cloud Engineer,8,28,16,Very High,Excellent
+DevOps Engineer,8,28,15,Very High,Excellent
+AWS Solutions Architect,12,40,22,Very High,Excellent
+Kubernetes Engineer,10,30,18,High,Excellent
+Site Reliability Engineer,12,35,20,High,Very Good
+Platform Engineer,10,30,18,High,Very Good
+Cybersecurity Analyst,6,20,11,Very High,Excellent
+Security Engineer,8,25,14,Very High,Excellent
+Penetration Tester,6,22,12,High,Very Good
+Network Security Engineer,6,20,11,High,Good
+Network Engineer,4,15,7,Medium,Stable
+Network Administrator,3,12,6,Medium,Stable
+System Administrator,3,12,6,Medium,Stable
+Computer Network Specialist,4,15,8,Medium,Stable
+Product Manager,12,40,22,High,Very Good
+Project Manager,8,25,14,High,Good
+IT Consultant,8,25,14,High,Good
+Scrum Master,8,22,13,Medium,Good
+Technical Lead,15,40,25,High,Very Good
+Engineering Manager,20,60,35,High,Very Good
+Financial Analyst,4,15,8,High,Good
+Chartered Accountant,6,20,10,High,Good
+Investment Analyst,6,20,10,Medium,Good
+Risk Analyst,5,18,9,High,Good
+Credit Analyst,4,14,7,Medium,Stable
+Quantitative Analyst,10,35,20,High,Very Good
+HR Manager,5,18,9,Medium,Stable
+Talent Acquisition Specialist,4,14,7,Medium,Stable
+Operations Manager,6,20,11,Medium,Good
+HR Business Partner,8,22,13,Medium,Good
+UI/UX Designer,4,18,9,High,Good
+Graphic Designer,3,10,5,Medium,Stable
+Content Writer,2,8,4,Medium,Stable
+Digital Marketing Specialist,3,12,6,High,Good
+SEO Specialist,3,10,5,Medium,Stable
+Healthcare Analyst,4,14,7,Medium,Good
+Clinical Data Manager,6,18,10,Medium,Good
+Blockchain Developer,8,25,15,Medium,Good
+AR/VR Developer,6,20,12,Medium,Very Good
+IoT Engineer,5,18,10,Medium,Good
+Robotics Engineer,6,22,13,Medium,Very Good

@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Environment — NEVER commit
+.env
+.env.local
+.env.production
+
+# ML Models — kept in repo (small size ~400KB)
+# *.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Node / React
+node_modules/
+build/
+.npm
+
+# Generated files
+*.pdf
+*.docx
+*.tex
+*.aux
+*.log
+*.out
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
