@@ -38,8 +38,19 @@ async def analyze_resume(file: UploadFile = File(...)):
     # Use hybrid analysis (LLM + rule-based fallback)
     if HYBRID_AVAILABLE:
         result = analyze_resume_hybrid(text, "")
-        result["filename"] = file.filename
+        result["filename"]    = file.filename
         result["resume_text"] = text[:500]
+        # Add NER parsing
+        if NER_AVAILABLE:
+            try:
+                ner_data = parse_resume_ner(text)
+                result["ner_entities"]       = ner_data
+                result["companies_detected"] = ner_data.get("companies", [])
+                result["skills_categorized"] = ner_data.get("skills_by_category", {})
+                if not result.get("skills"):
+                    result["skills"] = ner_data.get("skills", [])
+            except Exception as e:
+                print(f"[NER] Failed: {e}")
         return result
 
     quality    = calculate_quality_score(text)        # calculate quality score

@@ -137,6 +137,16 @@ DOMAIN_MISMATCH_BOOST = 0.10
 
 
 # ── LLM Explanation for Fraud Results ───────────────────────
+# ── DistilBERT Integration ───────────────────────────────────
+try:
+    from app.distilbert_fraud import analyze_job_fraud_bert
+    BERT_AVAILABLE = True
+    print("[fraud] DistilBERT module loaded ✅")
+except ImportError:
+    BERT_AVAILABLE = False
+    print("[fraud] DistilBERT not available — using ML only")
+
+
 def _llm_explain_fraud(job_text: str, fraud_score: float, signals: list) -> dict:
     try:
         import os
