@@ -1,60 +1,59 @@
-from sqlalchemy import create_engine, Column, Integer, String, Float, Text, DateTime
-from sqlalchemy.orm import declarative_base
+"""
+database.py — Database Configuration
+SQLite locally, PostgreSQL on Render/production
+"""
+import os
+from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime, Text
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 
-# --- Create database engine (creates careershield.db file) ---
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-engine = create_engine(f'sqlite:///{BASE_DIR}/careershield.db')
+# Auto-detect: PostgreSQL on Render, SQLite locally
+DATABASE_URL = os.environ.get("DATABASE_URL", "")
 
-# --- Base class for all tables ---
-Base = declarative_base()
+if DATABASE_URL:
+    # PostgreSQL (Render) — fix postgres:// to postgresql://
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+    engine = create_engine(DATABASE_URL)
+    print(f"[DB] Using PostgreSQL ✅")
+else:
+    # SQLite (local development)
+    engine = create_engine(
+        "sqlite:///./jobsaathi.db",
+        connect_args={"check_same_thread": False}
+    )
+    print("[DB] Using SQLite (local) ✅")
 
-# --- Table 1: Users ---
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Base         = declarative_base()
+
 class User(Base):
-    __tablename__ = 'users'
-    id       = Column(Integer, primary_key=True)      # unique user id
-    username = Column(String, unique=True)             # unique username
-    email    = Column(String, unique=True)             # unique email
-    password = Column(String)                          # hashed password
-    created  = Column(DateTime, default=datetime.now)  # account creation time
+    __tablename__ = "users"
+    id       = Column(Integer, primary_key=True, index=True)
+    username = Column(String, unique=True, index=True)
+    email    = Column(String, unique=True, index=True)
+    password = Column(String)
+    created  = Column(DateTime, default=datetime.utcnow)
 
-# --- Table 2: Resume History ---
 class ResumeHistory(Base):
-    __tablename__ = 'resume_history'
-    id         = Column(Integer, primary_key=True)     # unique record id
-    user_id    = Column(Integer)                       # which user uploaded
-    filename   = Column(String)                        # resume file name
-    skills     = Column(Text)                          # extracted skills
-    ats_score  = Column(Float)                         # ATS score out of 100
-    qual_score = Column(Float)                         # quality score out of 100
-    category   = Column(String)                        # predicted job category
-    created    = Column(DateTime, default=datetime.now) # upload time
+    __tablename__ = "resume_history"
+    id            = Column(Integer, primary_key=True, index=True)
+    user_id       = Column(Integer, index=True)
+    filename      = Column(String)
+    ats_score     = Column(Float, default=0)
+    quality_score = Column(Float, default=0)
+    skills        = Column(Text, default="[]")
+    created_at    = Column(DateTime, default=datetime.utcnow)
 
-# --- Table 3: Job Analysis History ---
 class JobAnalysis(Base):
-    __tablename__ = 'job_analysis'
-    id            = Column(Integer, primary_key=True)  # unique record id
-    user_id       = Column(Integer)                    # which user analysed
-    job_title     = Column(String)                     # job title
-    fraud_score   = Column(Float)                      # fraud probability
-    fraud_reasons = Column(Text)                       # SHAP explanation
-    match_score   = Column(Float)                      # resume match %
-    created       = Column(DateTime, default=datetime.now) # analysis time
+    __tablename__ = "job_analysis"
+    id          = Column(Integer, primary_key=True, index=True)
+    user_id     = Column(Integer, index=True)
+    job_title   = Column(String)
+    fraud_score = Column(Float, default=0)
+    verdict     = Column(String)
+    created_at  = Column(DateTime, default=datetime.utcnow)
 
-# --- Table 4: Reports ---
-class Report(Base):
-    __tablename__ = 'reports'
-    id          = Column(Integer, primary_key=True)    # unique record id
-    user_id     = Column(Integer)                      # which user
-    report_path = Column(String)                       # path to PDF file
-    created     = Column(DateTime, default=datetime.now) # report time
-
-# --- Create all tables in the database ---
-Base.metadata.create_all(engine)
-
-# --- Session maker (used to query database) ---
-SessionLocal = sessionmaker(bind=engine)
-
-print("Database and tables created successfully!")
+# Create all tables
+Base.metadata.create_all(bind=engine)
+print("[DB] Tables created/verified ✅")

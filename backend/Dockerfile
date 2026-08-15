@@ -1,46 +1,23 @@
-# CareerShield AI — Production Dockerfile
-
 FROM python:3.11-slim
-
-# Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    texlive-latex-base \
-    texlive-latex-recommended \
-    texlive-latex-extra \
-    texlive-fonts-recommended \
-    texlive-fonts-extra \
-    texlive-xetex \
-    lmodern \
-    fonts-lato \
-    fonts-open-sans \
-    fontconfig \
-    wget gnupg unzip curl \
-    && fc-cache -fv \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install Google Chrome for Selenium
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
-    && echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" \
-       >> /etc/apt/sources.list.d/google.list \
-    && apt-get update \
-    && apt-get install -y google-chrome-stable \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# Install Python dependencies
+# System dependencies
+RUN apt-get update && apt-get install -y \
+    gcc g++ curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install spaCy model
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+RUN python -m spacy download en_core_web_sm
 
-# Copy backend code
+# Copy app
 COPY . .
 
-# Make startup script executable
-RUN chmod +x startup.sh
+# Hugging Face uses port 7860
+ENV PORT=7860
 
-EXPOSE 8000
+EXPOSE 7860
 
-# Use startup script — downloads ML models then starts server
-CMD ["bash", "startup.sh"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "7860"]
