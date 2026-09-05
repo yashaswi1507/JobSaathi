@@ -31,6 +31,15 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
+# Health check endpoints
+@app.get("/")
+def root():
+    return {"status": "JobSaathi AI is running!", "version": "2.0"}
+
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
+
 # Core routes
 app.include_router(auth.router,                   prefix="/auth",      tags=["Authentication"])
 app.include_router(resume.router,                 prefix="/resume",    tags=["Resume"])
