@@ -19,13 +19,13 @@ psycopg2-binary==2.9.9
 scikit-learn==1.5.2
 xgboost==2.1.1
 lightgbm==4.5.0
-numpy==2.0.2
+numpy==1.26.4
 pandas==2.2.3
 shap==0.46.0
 
 # NLP
 sentence-transformers==2.2.2
-spacy==3.7.2
+spacy==3.7.4
 nltk==3.8.1
 
 # Groq LLM
@@ -56,6 +56,3 @@ aiosmtplib==2.0.2
 
 # PDF Generation
 weasyprint==60.2
-
-transformers
-torch
