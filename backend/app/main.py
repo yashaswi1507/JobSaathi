@@ -1,4 +1,15 @@
 from fastapi import FastAPI
+import subprocess, sys
+
+# Download spaCy model on startup if not present
+try:
+    import spacy
+    spacy.load("en_core_web_sm")
+except OSError:
+    print("[startup] Downloading spaCy model...")
+    subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_sm"], check=False)
+except Exception:
+    pass
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes import auth, resume, fraud, career, reports, salary, history, rag_routes
 from app.routes import resume_features_routes, llm_routes
