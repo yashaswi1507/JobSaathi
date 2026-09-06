@@ -1,39 +1,23 @@
-# JobSaathi AI — Production Dependencies
+# JobSaathi AI — Minimal Production
 
-# Web Framework
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
 python-multipart==0.0.6
-
-# Auth
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 bcrypt==4.0.1
-
-# Database
 sqlalchemy==2.0.23
 psycopg2-binary==2.9.9
-
-# ML — pre-built wheels
+numpy==1.26.4
+pandas==2.2.3
 scikit-learn==1.5.2
 xgboost==2.1.1
 lightgbm==4.5.0
-numpy==1.26.4
-pandas==2.2.3
-
-# NLP
 sentence-transformers==2.2.2
 nltk==3.8.1
-
-# Groq
 groq==0.4.2
-
-# Document
 pypdf==3.17.0
 python-docx==1.1.0
-Pillow==10.1.0
-
-# Utils
 requests==2.31.0
 beautifulsoup4==4.12.2
 python-dotenv==1.0.0
