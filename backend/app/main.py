@@ -11,11 +11,30 @@ except OSError:
 except Exception:
     pass
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes import auth, resume, fraud, career, reports, salary, history, rag_routes
-from app.routes import resume_features_routes, llm_routes
-from app.routes import resume_builder_routes, recruiter_routes
-from app.routes import resume_enhance_routes
-from app.routes import voice_interview_route
+from app.routes import auth, resume, fraud, career, salary, history, rag_routes
+
+# Optional routes - load safely
+try:
+    from app.routes import reports
+except: reports = None
+try:
+    from app.routes import resume_features_routes
+except: resume_features_routes = None
+try:
+    from app.routes import llm_routes
+except: llm_routes = None
+try:
+    from app.routes import resume_builder_routes
+except: resume_builder_routes = None
+try:
+    from app.routes import recruiter_routes
+except: recruiter_routes = None
+try:
+    from app.routes import resume_enhance_routes
+except: resume_enhance_routes = None
+try:
+    from app.routes import voice_interview_route
+except: voice_interview_route = None
 
 app = FastAPI(
     title="CareerShield AI",
@@ -48,22 +67,28 @@ async def startup_event():
     except Exception as e:
         print(f"[startup] DB init warning: {e}")
 
-# Core routes
-app.include_router(auth.router,                   prefix="/auth",      tags=["Authentication"])
-app.include_router(resume.router,                 prefix="/resume",    tags=["Resume"])
-app.include_router(fraud.router,                  prefix="/fraud",     tags=["Fraud Detection"])
-app.include_router(career.router,                 prefix="/career",    tags=["Career"])
-app.include_router(reports.router,                prefix="/reports",   tags=["Reports"])
-app.include_router(salary.router, prefix="/salary", tags=["Salary"])
-app.include_router(history.router, prefix="/history", tags=["History"])
-app.include_router(rag_routes.router, prefix="/rag", tags=["RAG"])
-# New routes
-app.include_router(resume_features_routes.router, prefix="/resume",    tags=["Resume Features"])
-app.include_router(resume_builder_routes.router,  prefix="/resume",    tags=["Resume Builder"])
-app.include_router(llm_routes.router,             prefix="/ai",        tags=["AI Features"])
-app.include_router(recruiter_routes.router,       prefix="/recruiter", tags=["Recruiter Tools"])
-app.include_router(resume_enhance_routes.router,  prefix="/resume",    tags=["Resume Enhancement"])
-app.include_router(voice_interview_route.router,    prefix="/interview", tags=["Voice Interview"])
+# Core routes - safe include
+def safe_include(router_module, prefix, tags):
+    try:
+        if router_module:
+            app.include_router(router_module.router, prefix=prefix, tags=tags)
+    except Exception as e:
+        print(f"[routes] Skipping {prefix}: {e}")
+
+safe_include(auth,                   "/auth",      ["Authentication"])
+safe_include(resume,                 "/resume",    ["Resume"])
+safe_include(fraud,                  "/fraud",     ["Fraud"])
+safe_include(career,                 "/career",    ["Career"])
+safe_include(salary,                 "/salary",    ["Salary"])
+safe_include(history,                "/history",   ["History"])
+safe_include(rag_routes,             "/rag",       ["RAG"])
+safe_include(reports,                "/reports",   ["Reports"])
+safe_include(resume_features_routes, "/resume",    ["Resume Features"])
+safe_include(llm_routes,             "/llm",       ["LLM"])
+safe_include(resume_builder_routes,  "/resume",    ["Builder"])
+safe_include(recruiter_routes,       "/recruiter", ["Recruiter"])
+safe_include(resume_enhance_routes,  "/resume",    ["Enhance"])
+safe_include(voice_interview_route,  "/voice",     ["Voice"])
 
 @app.get("/")
 def root():
