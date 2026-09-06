@@ -40,6 +40,14 @@ def root():
 def health():
     return {"status": "healthy"}
 
+@app.on_event("startup")
+async def startup_event():
+    try:
+        from app.database import init_db
+        init_db()
+    except Exception as e:
+        print(f"[startup] DB init warning: {e}")
+
 # Core routes
 app.include_router(auth.router,                   prefix="/auth",      tags=["Authentication"])
 app.include_router(resume.router,                 prefix="/resume",    tags=["Resume"])

@@ -54,6 +54,10 @@ class JobAnalysis(Base):
     verdict     = Column(String)
     created_at  = Column(DateTime, default=datetime.utcnow)
 
-# Create all tables
-Base.metadata.create_all(bind=engine)
-print("[DB] Tables created/verified ✅")
+# Create tables lazily - don't block startup
+def init_db():
+    try:
+        Base.metadata.create_all(bind=engine)
+        print("[DB] Tables created/verified ✅")
+    except Exception as e:
+        print(f"[DB] Warning: {e}")
